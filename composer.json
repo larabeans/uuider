@@ -3,9 +3,10 @@
     "description": "Apiato container to replace primary key type from auto-increment to uuid.",
     "type": "apiato-container",
     "homepage": "https://larabeans.com/",
+    "version": "0.1.0",
     "support": {
-        "issues": "https://github.com/larabeans/uuid-transformer/issues",
-        "source": "https://github.com/larabeans/uuid-transformer"
+        "issues": "https://github.com/larabeans/uuider/issues",
+        "source": "https://github.com/larabeans/uuider"
     },
     "authors": [
         {
