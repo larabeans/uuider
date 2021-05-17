@@ -14,13 +14,13 @@ class UpdateUserContainerTablesPrimaryKeyTypeToUuid extends Migration
         if(Config::get('beaner.uuider.enabled')){
 
             // First drop `id` reference, used as foreign key.
-            Schema::table('payment_accounts', function (Blueprint $table) {
-                $table->dropForeign('payment_accounts_user_id_foreign');
-            });
+            // Schema::table('payment_accounts', function (Blueprint $table) {
+            //    $table->dropForeign('payment_accounts_user_id_foreign');
+            // });
 
-            Schema::table('payment_transactions', function (Blueprint $table) {
-                $table->dropForeign('payment_transactions_user_id_foreign');
-            });
+            // Schema::table('payment_transactions', function (Blueprint $table) {
+            //    $table->dropForeign('payment_transactions_user_id_foreign');
+            // });
 
             // Then drop `id` column, so they can be re-added with new type.
             Schema::table('users', function (Blueprint $table) {
