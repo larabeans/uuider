@@ -22,7 +22,9 @@
         "larabeans"
     ],
     "license": "MIT",
-    "require": {},
+    "require": {
+        "larabeans/core": "*"
+    },
     "require-dev": {},
     "extra": {
         "apiato": {
