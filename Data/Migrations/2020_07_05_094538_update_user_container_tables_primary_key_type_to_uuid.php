@@ -11,7 +11,7 @@ class UpdateUserContainerTablesPrimaryKeyTypeToUuid extends Migration
      */
     public function up()
     {
-        if(Config::get('uuider.enabled')){
+        if(Config::get('beaner.uuider.enabled')){
 
             // First drop `id` reference, used as foreign key.
             Schema::table('payment_accounts', function (Blueprint $table) {

@@ -11,7 +11,7 @@ class UpdateAuthorizationContainerTablesPrimaryKeyTypeToUuid extends Migration
      */
     public function up()
     {
-        if(Config::get('uuider.enabled')){
+        if(Config::get('beaner.uuider.enabled')){
 
             $tableNames = config('permission.table_names');
             $foreignKeys = config('permission.foreign_keys');

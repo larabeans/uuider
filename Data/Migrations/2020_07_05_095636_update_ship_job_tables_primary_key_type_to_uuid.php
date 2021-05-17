@@ -11,7 +11,7 @@ class UpdateShipJobTablesPrimaryKeyTypeToUuid extends Migration
      */
     public function up()
     {
-        if(Config::get('queue.default') == 'database' && Config::get('uuider.enabled')){
+        if(Config::get('queue.default') == 'database' && Config::get('beaner.uuider.enabled')){
 
             // First drop `id` column, so they can be re-added with new type.
             Schema::table('jobs', function (Blueprint $table) {
@@ -24,7 +24,7 @@ class UpdateShipJobTablesPrimaryKeyTypeToUuid extends Migration
             });
         }
 
-        if(Config::get('uuider.enabled')){
+        if(Config::get('beaner.uuider.enabled')){
 
             // First drop `id` column, so they can be re-added with new type.
             Schema::table('failed_jobs', function (Blueprint $table) {
