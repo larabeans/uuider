@@ -11,7 +11,7 @@ class UpdateNotifiableMorphToUuidMorph extends Migration
      */
     public function up()
     {
-        if(Config::get('beaner.uuider.enabled')){
+        if(Config::get('beaner.uuider')){
 
             Schema::table('notifications', function (Blueprint $table) {
                 $table->dropMorphs('notifiable');

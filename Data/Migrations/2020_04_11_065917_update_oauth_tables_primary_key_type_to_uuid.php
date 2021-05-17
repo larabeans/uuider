@@ -11,7 +11,7 @@ class UpdateOauthTablesPrimaryKeyTypeToUuid extends Migration
      */
     public function up()
     {
-        if(Config::get('beaner.uuider.enabled')){
+        if(Config::get('beaner.uuider')){
 
             // First drop all `id` columns, so they can be re-added with new type.
             Schema::table('oauth_auth_codes', function (Blueprint $table) {
