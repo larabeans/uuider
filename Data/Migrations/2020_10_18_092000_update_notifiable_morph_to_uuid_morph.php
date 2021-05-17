@@ -22,8 +22,8 @@ class UpdateNotifiableMorphToUuidMorph extends Migration
                 // $table->uuidMorphs('notifiable');
 
                 // Manual implementation of morph
-                $table->string("notifiable_type")->after('tenant_id');
-                $table->uuid("notifiable_id")->after('tenant_id');
+                $table->string("notifiable_type")->after('id');
+                $table->uuid("notifiable_id")->after('id');
                 $table->index(["notifiable_id", "notifiable_type"]);
             });
         }
