@@ -11,7 +11,7 @@ class MainServiceProvider extends MainProvider
     {
         // To use customize passport models to replace primary key type from auto-increment to uuid.
         Passport::useClientModel(\App\Containers\Vendor\Uuider\Models\Client::class);
-        Passport::usePersonalAccessClientModel(\App\Containers\Vendor\Uuider\PersonalAccessClient::class);
+        Passport::usePersonalAccessClientModel(\App\Containers\Vendor\Uuider\Models\PersonalAccessClient::class);
     }
 
     public function register(): void

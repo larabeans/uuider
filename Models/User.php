@@ -4,7 +4,7 @@ namespace App\Containers\Vendor\Uuider\Models;
 
 use App\Containers\AppSection\Authentication\Traits\AuthenticationTrait;
 use App\Containers\AppSection\Authorization\Traits\AuthorizationTrait;
-use App\Containers\Vendor\Beaner\Parents\UserModel;
+use App\Containers\Vendor\Beaner\Parents\Models\UserModel;
 use Illuminate\Notifications\Notifiable;
 
 class User extends UserModel
