@@ -2,47 +2,12 @@
 
 namespace App\Containers\Vendor\Uuider\Models;
 
-use App\Containers\AppSection\Authentication\Traits\AuthenticationTrait;
-use App\Containers\AppSection\Authorization\Traits\AuthorizationTrait;
-use App\Containers\Vendor\Beaner\Parents\Models\UserModel;
-use Illuminate\Notifications\Notifiable;
+use App\Containers\AppSection\User\Models\User as ApiatoUser;
+use App\Containers\Vendor\Beaner\Traits\HasUuid;
+use App\Containers\Vendor\Beaner\Traits\MultiTenantable;
 
-class User extends UserModel
+class User extends ApiatoUser
 {
-    use AuthorizationTrait;
-    use AuthenticationTrait;
-    use Notifiable;
-
-    protected $table = 'users';
-
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'device',
-        'platform',
-        'gender',
-        'birth',
-        'social_provider',
-        'social_token',
-        'social_refresh_token',
-        'social_expires_in',
-        'social_token_secret',
-        'social_id',
-        'social_avatar',
-        'social_avatar_original',
-        'social_nickname',
-        'email_verified_at',
-        'is_admin',
-    ];
-
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected $casts = [
-        'is_admin' => 'boolean',
-        'email_verified_at' => 'datetime',
-    ];
+    use HasUuid;
+    use MultiTenantable;
 }
