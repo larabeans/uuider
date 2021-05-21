@@ -19,7 +19,7 @@ class MainServiceProvider extends MainProvider
         // Over-write permission configuration on run time to
         // update role and permissions models
         config(['permission.models.permission' => config('uuider.models.permission', \App\Containers\Vendor\Uuider\Models\Permission::class)]);
-        config(['permission.models.permission' => config('uuider.models.role', \App\Containers\Vendor\Uuider\Models\Role::class)]);
+        config(['permission.models.role' => config('uuider.models.role', \App\Containers\Vendor\Uuider\Models\Role::class)]);
     }
 
 }
