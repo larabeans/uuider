@@ -11,41 +11,38 @@ class UpdateOauthTablesPrimaryKeyTypeToUuid extends Migration
      */
     public function up()
     {
-        if(Config::get('beaner.uuider')){
+        // First drop all `id` columns, so they can be re-added with new type.
+        Schema::table('oauth_auth_codes', function (Blueprint $table) {
+            $table->dropColumn('id');
+        });
+        Schema::table('oauth_clients', function (Blueprint $table) {
+            $table->dropColumn('id');
+        });
+        Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
+            $table->dropColumn('id');
+        });
 
-            // First drop all `id` columns, so they can be re-added with new type.
-            Schema::table('oauth_auth_codes', function (Blueprint $table) {
-                $table->dropColumn('id');
-            });
-            Schema::table('oauth_clients', function (Blueprint $table) {
-                $table->dropColumn('id');
-            });
-            Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
-                $table->dropColumn('id');
-            });
+        // Now Add `id` columns and update foreign keys
+        Schema::table('oauth_auth_codes', function (Blueprint $table) {
+            $table->uuid('id')->primary()->first();
+            $table->uuid('user_id')->change();
+            $table->uuid('client_id')->change();
+        });
 
-            // Now Add `id` columns and update foreign keys
-            Schema::table('oauth_auth_codes', function (Blueprint $table) {
-                $table->uuid('id')->primary()->first();
-                $table->uuid('user_id')->change();
-                $table->uuid('client_id')->change();
-            });
+        Schema::table('oauth_access_tokens', function (Blueprint $table) {
+            $table->uuid('user_id')->nullable()->change();
+            $table->uuid('client_id')->nullable()->change();
+        });
 
-            Schema::table('oauth_access_tokens', function (Blueprint $table) {
-                $table->uuid('user_id')->nullable()->change();
-                $table->uuid('client_id')->nullable()->change();
-            });
+        Schema::table('oauth_clients', function (Blueprint $table) {
+            $table->uuid('id')->primary()->first();
+            $table->uuid('user_id')->nullable()->change();
+        });
 
-            Schema::table('oauth_clients', function (Blueprint $table) {
-                $table->uuid('id')->primary()->first();
-                $table->uuid('user_id')->nullable()->change();
-            });
-
-            Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
+        Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
                 $table->uuid('id')->primary()->first();
                 $table->uuid('client_id')->change();
             });
-        }
     }
 
     /**

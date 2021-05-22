@@ -11,22 +11,19 @@ class UpdateNotifiableMorphToUuidMorph extends Migration
      */
     public function up()
     {
-        if(Config::get('beaner.uuider')){
+        Schema::table('notifications', function (Blueprint $table) {
+            $table->dropMorphs('notifiable');
+        });
 
-            Schema::table('notifications', function (Blueprint $table) {
-                $table->dropMorphs('notifiable');
-            });
+        Schema::table('notifications', function (Blueprint $table) {
+            // Not using morph, as this doesn't supports after modifier
+            // $table->uuidMorphs('notifiable');
 
-            Schema::table('notifications', function (Blueprint $table) {
-                // Not using morph, as this doesn't supports after modifier
-                // $table->uuidMorphs('notifiable');
-
-                // Manual implementation of morph
-                $table->string("notifiable_type")->after('id');
-                $table->uuid("notifiable_id")->after('id');
-                $table->index(["notifiable_id", "notifiable_type"]);
-            });
-        }
+            // Manual implementation of morph
+            $table->string("notifiable_type")->after('id');
+            $table->uuid("notifiable_id")->after('id');
+            $table->index(["notifiable_id", "notifiable_type"]);
+        });
     }
 
     /**
