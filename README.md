@@ -28,12 +28,10 @@ Contains new migrations to update core tables primary key type to uuid, which is
 ## Models
 Adds new models.
 
-- Permission.php
-- Role.php
-- User.php
-- Client.php
-- PersonalAccessClient.php
+- Client
+- PersonalAccessClient
 
+- User, Role and Permission models are used that are provided in core (beaner container). If you want to use your own models, write your own model and use HasUuid trait in your custom models. Or just extend existing models and add your custom functionality in those models. You also have to update core (beaner) config file models values to make this work for your custom models
 ---
 
 ## Apiato Container Conflicts
@@ -112,7 +110,15 @@ model overriding option provided in spatie package.
 ---
 
 ## Environment File
-- Update user namespace as USER_NAMESPACE=App\Containers\Vendor\Uuider\Models\
+- Update env file user namespace as USER_NAMESPACE=App\Containers\Vendor\Beaner\Models\
+
+OR 
+
+Create you own user model and use trait from core (beaner) container as 
+
+```phpt
+    use HasUuid;
+```
 
 ---
 >[Larabeans](README.md) > Uuider [⬆](#uuider)
