@@ -2,13 +2,13 @@
 
 return [
 
+    'installed' => true,
+
     'models' => [
 
-        'user' => \App\Containers\Vendor\Uuider\Models\User::class,
+        'client' => \App\Containers\Vendor\Uuider\Models\Client::class,
 
-        'permission' => \App\Containers\Vendor\Uuider\Models\Permission::class,
-
-        'role' => \App\Containers\Vendor\Uuider\Models\Role::class,
+        'personal_access_client' => \App\Containers\Vendor\Uuider\Models\PersonalAccessClient::class,
     ],
 
     // Containers to skip primary key type conversion from auto-increment to uuid
