@@ -11,7 +11,7 @@ class UpdateShipJobTablesPrimaryKeyTypeToUuid extends Migration
      */
     public function up()
     {
-        if(Config::get('queue.default') == 'database'){
+        if (Config::get('queue.default') == 'database') {
 
             // First drop `id` column, so they can be re-added with new type.
             Schema::table('jobs', function (Blueprint $table) {
