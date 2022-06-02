@@ -2,10 +2,10 @@
 
 namespace App\Containers\Vendor\Uuider\Providers;
 
-use App\Ship\Parents\Providers\MainProvider;
+use App\Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
 use Laravel\Passport\Passport;
 
-class MainServiceProvider extends MainProvider
+class MainServiceProvider extends ParentMainServiceProvider
 {
     public function boot(): void
     {
