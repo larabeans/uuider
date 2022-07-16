@@ -39,7 +39,7 @@ Adds new models.
 
 ## Environment File
 
-- Update env file user namespace as USER_NAMESPACE=App\Containers\Vendor\Beaner\Models\
+- Update env file user namespace as USER_NAMESPACE=App\Containers\Larabeans\Beaner\Models\
 
 OR
 
