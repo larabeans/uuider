@@ -18,8 +18,8 @@ class MainServiceProvider extends ParentMainServiceProvider
     {
         // Over-write permission configuration on run time to
         // update role and permissions models
-        config(['permission.models.permission' => config('beaner.models.permission', \App\Containers\Larabeans\Beaner\Models\Permission::class)]);
-        config(['permission.models.role' => config('beaner.models.role', \App\Containers\Larabeans\Beaner\Models\Role::class)]);
+        config(['permission.models.permission' => config('core.models.permission', \App\Containers\Larabeans\Core\Models\Permission::class)]);
+        config(['permission.models.role' => config('core.models.role', \App\Containers\Larabeans\Core\Models\Role::class)]);
     }
 
 }
