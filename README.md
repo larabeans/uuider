@@ -30,20 +30,20 @@ Adds new models.
 - Client
 - PersonalAccessClient
 
-- User, Role and Permission models are used that are provided in core (beaner container). If you want to use your own
+- User, Role and Permission models are used that are provided in core container. If you want to use your own
   models, write your own model and use HasUuid trait in your custom models. Or just extend existing models and add your
-  custom functionality in those models. You also have to update core (beaner) config file models values to make this
+  custom functionality in those models. You also have to update core config file models values to make this
   work for your custom models
 
 ---
 
 ## Environment File
 
-- Update env file user namespace as USER_NAMESPACE=App\Containers\Vendor\Beaner\Models\
+- Update env file user namespace as USER_NAMESPACE=App\Containers\Larabeans\Core\Models\
 
 OR
 
-Create you own user model and use trait from core (beaner) container as
+Create you own user model and use trait from core container as
 
 ```phpt
     use HasUuid;

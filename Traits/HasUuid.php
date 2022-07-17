@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\Vendor\Uuider\Traits;
+namespace App\Containers\Larabeans\Uuider\Traits;
 
 use Facades\Str;
 
