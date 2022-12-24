@@ -1,7 +1,7 @@
 {
     "name": "larabeans/uuider",
     "description": "Apiato container to replace primary key type from auto-increment to uuid.",
-    "type": "apiato-container",
+    "type": "larabeans-container",
     "homepage": "https://larabeans.com/",
     "version": "0.1.0",
     "support": {
@@ -29,6 +29,7 @@
     "extra": {
         "apiato": {
             "container": {
+                "section": "Larabeans",
                 "name": "Uuider"
             }
         }

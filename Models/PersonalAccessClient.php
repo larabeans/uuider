@@ -1,11 +1,11 @@
 <?php
-namespace App\Containers\Vendor\Uuider\Models;
+
+namespace App\Containers\Larabeans\Uuider\Models;
 
 use Laravel\Passport\PersonalAccessClient as OAuthPersonalAccessClient;
-use App\Containers\Vendor\Beaner\Traits\HasUuid;
+use App\Containers\Larabeans\Uuider\Traits\HasUuid;
 
 class PersonalAccessClient extends OAuthPersonalAccessClient
 {
     use HasUuid;
-
 }

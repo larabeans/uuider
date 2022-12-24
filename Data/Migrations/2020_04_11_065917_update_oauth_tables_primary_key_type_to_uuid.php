@@ -40,9 +40,9 @@ class UpdateOauthTablesPrimaryKeyTypeToUuid extends Migration
         });
 
         Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
-                $table->uuid('id')->primary()->first();
-                $table->uuid('client_id')->change();
-            });
+            $table->uuid('id')->primary()->first();
+            $table->uuid('client_id')->change();
+        });
     }
 
     /**
